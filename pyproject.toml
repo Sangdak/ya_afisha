@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "ya-afisha"
+version = "0.1.0"
+description = ""
+authors = ["Sangdak <82779027+Sangdak@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "ya_afisha"}]
+
+[tool.poetry.dependencies]
+python = "3.10.11"
+django = "^4.2.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
