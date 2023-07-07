@@ -38,6 +38,20 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-admin-sortable2"
+version = "2.1.8"
+description = "Generic drag-and-drop sorting for the List, the Stacked- and the Tabular-Inlines Views in the Django Admin"
+optional = false
+python-versions = "*"
+files = [
+    {file = "django-admin-sortable2-2.1.8.tar.gz", hash = "sha256:6933a9bba9dbedc4a106bb488e4b8a1fb85cbe0459fb46504fe602d65dbfd3e9"},
+    {file = "django_admin_sortable2-2.1.8-py3-none-any.whl", hash = "sha256:aeb75152c2ed222cf0894e96c449bb2b64eb629f0494b4b203c23e0b36ca2349"},
+]
+
+[package.dependencies]
+Django = ">=4.0"
+
+[[package]]
 name = "pillow"
 version = "10.0.0"
 description = "Python Imaging Library (Fork)"
@@ -145,4 +159,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "3.10.11"
-content-hash = "7c18d6d701f05757554a3f94283ca4eaede44696e5484d501fa0422880dd4544"
+content-hash = "1092ed8636c3649a11d14cf4abb7caa8d623a33699042bf193e808d7a42ceeff"

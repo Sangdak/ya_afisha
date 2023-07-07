@@ -39,6 +39,7 @@ class Image(models.Model):
         verbose_name='Изображение',
     )
     order = models.PositiveIntegerField(
+        default=1,
         verbose_name='Порядковый номер',
     )
 
@@ -51,3 +52,4 @@ class Image(models.Model):
     class Meta:
         verbose_name = 'Изображение'
         verbose_name_plural = 'Изображения'
+        ordering = ['order']
