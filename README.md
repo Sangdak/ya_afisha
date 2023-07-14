@@ -23,8 +23,6 @@ ALLOWED_HOSTS=<разрешённые адреса, см. подробнее в 
 ```
 - Создайте файлы миграции для базы данных, примените их и, следуя подсказкам, создайте супер-юзера: 
 ```shell
-python manage.py makemigrations
-. . .
 python manage.py migrate
 . . .
 python manage.py createsuperuser
