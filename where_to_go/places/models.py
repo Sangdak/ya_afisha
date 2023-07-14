@@ -16,10 +16,10 @@ class Place(models.Model):
         blank=True,
         verbose_name='Развёрнутое описание'
     )
-    coordinates_lng = models.FloatField(
+    lng = models.FloatField(
         verbose_name='Координаты: долгота'
     )
-    coordinates_lat = models.FloatField(
+    lat = models.FloatField(
         verbose_name='Координаты: широта'
     )
 

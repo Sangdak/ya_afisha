@@ -19,8 +19,8 @@ def start_page(request):
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    place.coordinates_lng,
-                    place.coordinates_lat
+                    place.lng,
+                    place.lat
                 ]
             },
             "properties": {
@@ -47,8 +47,8 @@ def place_card(request, place_id):
         'description_short': selected_place.description_short,
         'description_long': selected_place.description_long,
         'coordinates': {
-            'lng': selected_place.coordinates_lng,
-            'lat': selected_place.coordinates_lat
+            'lng': selected_place.lng,
+            'lat': selected_place.lat
         }
     }
     return JsonResponse(
