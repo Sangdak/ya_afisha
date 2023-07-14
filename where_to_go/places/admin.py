@@ -19,9 +19,3 @@ class ImageInline(SortableTabularInline):
 class PlaceAdmin(SortableAdminBase, admin.ModelAdmin):
     list_display = ['title']
     inlines = (ImageInline,)
-
-
-@admin.register(Image)
-class ImageAdmin(admin.ModelAdmin):
-    ...
-    # list_display = ['order', 'place']
