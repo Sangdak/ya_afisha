@@ -43,7 +43,7 @@ def place_card(request, place_id):
     selected_place = get_object_or_404(Place, id=place_id)
     place_info = {
         'title': selected_place.title,
-        'imgs': [img.get_url() for img in selected_place.images.all()],
+        'imgs': [img.image.url for img in selected_place.images.all()],
         'description_short': selected_place.description_short,
         'description_long': selected_place.description_long,
         'coordinates': {

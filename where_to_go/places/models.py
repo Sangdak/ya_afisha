@@ -53,6 +53,3 @@ class Image(models.Model):
 
     def __str__(self):
         return f'{self.order} изображение {self.place.title}'
-
-    def get_url(self):
-        return self.image.url
