@@ -23,12 +23,12 @@ class Place(models.Model):
         verbose_name='Координаты: широта'
     )
 
-    def __str__(self):
-        return self.title
-
     class Meta:
         verbose_name = 'Место'
         verbose_name_plural = 'Места'
+
+    def __str__(self):
+        return self.title
 
 
 class Image(models.Model):
@@ -46,13 +46,13 @@ class Image(models.Model):
         verbose_name='Порядковый номер',
     )
 
-    def get_url(self):
-        return self.image.url
-
-    def __str__(self):
-        return f'{self.order} изображение {self.place.title}'
-
     class Meta:
         verbose_name = 'Изображение'
         verbose_name_plural = 'Изображения'
         ordering = ['order']
+
+    def __str__(self):
+        return f'{self.order} изображение {self.place.title}'
+
+    def get_url(self):
+        return self.image.url
