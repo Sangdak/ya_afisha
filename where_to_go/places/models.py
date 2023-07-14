@@ -9,9 +9,11 @@ class Place(models.Model):
         verbose_name='Название',
     )
     description_short = models.TextField(
+        blank=True,
         verbose_name='Краткое описание',
     )
     description_long = HTMLField(
+        blank=True,
         verbose_name='Развёрнутое описание'
     )
     coordinates_lng = models.FloatField(
