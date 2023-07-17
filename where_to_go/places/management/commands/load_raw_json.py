@@ -6,20 +6,20 @@ import requests
 from places.models import Place, Image
 
 
-def get_or_create_place(place_data):
+def get_or_create_place(place_raw):
     place_entry, created = Place.objects.get_or_create(
-        title=place_data['title'],
+        title=place_raw['title'],
         defaults={
-            'description_short': place_data.get('description_short', ''),
-            'description_long': place_data.get('description_long', ''),
-            'coordinates_lng': place_data.get('coordinates', {}).get('lng'),
-            'coordinates_lat': place_data.get('coordinates', {}).get('lat'),
+            'description_short': place_raw.get('description_short', ''),
+            'description_long': place_raw.get('description_long', ''),
+            'coordinates_lng': place_raw.get('coordinates', {}).get('lng'),
+            'coordinates_lat': place_raw.get('coordinates', {}).get('lat'),
         }
     )
 
-    if created and place_data['imgs']:
+    if created and place_raw['imgs']:
         # images = []
-        for order_num, image_url in enumerate(place_data.get('imgs'), start=1):
+        for order_num, image_url in enumerate(place_raw.get('imgs'), start=1):
             response = requests.get(image_url)
             response_image = response.content
             image_file = ContentFile(response_image)
