@@ -8,9 +8,11 @@ from .models import Place
 def show_start_page(request):
     places = Place.objects.all()
 
-    places_db = {
-        'type': 'FeatureCollection',
-        'features': []
+    context = {
+        'places': {
+            'type': 'FeatureCollection',
+            'features': [],
+        }
     }
 
     for place in places:
@@ -30,9 +32,7 @@ def show_start_page(request):
             }
         }
 
-        places_db['features'].append(feature)
-
-    context = {'places': places_db}
+        context['places']['features'].append(feature)
 
     rend_page = render(request, 'index.html', context)
 
