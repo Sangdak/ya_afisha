@@ -17,14 +17,15 @@ def get_or_create_place(place_raw):
         }
     )
 
-    if created and place_raw['imgs']:
-        for order_num, image_url in enumerate(place_raw.get('imgs', []), start=1):
-            response = requests.get('image_url', '')
-            response_image = response.content
-            image_file = ContentFile(response_image)
+    if not (created and place_raw['imgs']):
+        return
+    for order_num, image_url in enumerate(place_raw.get('imgs', []), start=1):
+        response = requests.get('image_url', '')
+        response_image = response.content
+        image_file = ContentFile(response_image)
 
-            images_entry = Image.objects.create(place=place_entry, order=order_num)
-            images_entry.image.save(f'{order_num}.jpg', image_file, save=True)
+        images_entry = Image.objects.create(place=place_entry, order=order_num)
+        images_entry.image.save(f'{order_num}.jpg', image_file, save=True)
 
 
 class Command(BaseCommand):
