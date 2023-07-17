@@ -9,28 +9,28 @@ def show_start_page(request):
     places = Place.objects.all()
 
     places_db = {
-        "type": "FeatureCollection",
-        "features": []
+        'type': 'FeatureCollection',
+        'features': []
     }
 
     for place in places:
         feature = {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
+            'type': 'Feature',
+            'geometry': {
+                'type': 'Point',
+                'coordinates': [
                     place.lng,
                     place.lat
                 ]
             },
-            "properties": {
-                "title": place.title,
-                "placeId": place.id,
-                "detailsUrl": reverse('places:place', args=[place.id])
+            'properties': {
+                'title': place.title,
+                'placeId': place.id,
+                'detailsUrl': reverse('places:place', args=[place.id])
             }
         }
 
-        places_db["features"].append(feature)
+        places_db['features'].append(feature)
 
     context = {'places': places_db}
 
