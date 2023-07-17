@@ -5,7 +5,7 @@ from django.urls import reverse
 from .models import Place
 
 
-def start_page(request):
+def show_start_page(request):
     places = Place.objects.all()
 
     places_db = {
@@ -39,7 +39,7 @@ def start_page(request):
     return HttpResponse(rend_page)
 
 
-def place_card(request, place_id):
+def show_place_card(request, place_id):
     selected_place = get_object_or_404(Place, id=place_id)
     place_info = {
         'title': selected_place.title,
