@@ -34,9 +34,7 @@ def show_start_page(request):
 
         context['places']['features'].append(feature)
 
-    rend_page = render(request, 'index.html', context)
-
-    return HttpResponse(rend_page)
+    return render(request, 'index.html', context)
 
 
 def show_place_card(request, place_id):
